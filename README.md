@@ -29,14 +29,10 @@ Your task is to recover the smudged message.
 After talking to our colleagues at the physics department, you find out that the smudge has been carried out with surgical precision.
 In fact, if we consider the whiteboard to be a unit square $[0,1]^2$ and consider the concentration of ink $u(t, x,y)$ at time $t$
 since the perpetrator started smudging, one can model the smudging process as a PDE:
-$$
-    \partial_t u(t,\pmb x) - a(\pmb x)\cdot \nabla u(t,\pmb x) = \nu \Delta u(t,\pmb x), \quad \pmb x \in [0,1]^2 \quad \text{and} \quad t\in [0,1],
-$$
+$$\partial_t u(t,\pmb x) - a(\pmb x)\cdot \nabla u(t,\pmb x) = \nu \Delta u(t,\pmb x), \quad \pmb x \in [0,1]^2 \quad \text{and} \quad t\in [0,1],$$
 where $a(x,y)=(a_x(x,y), a_y(x,y))$ is the displacement vector field, and $\nu = 0.0005$ the diffusivity. 
 The initial condition is given by the original message $u_0(x,y)$, and is precisely the quantity that we wish to estimate:
-$$
-    u(0, x, y) = u_0(x,y),\quad x,y\in [0,1]^2.
-$$
+$$u(0, x, y) = u_0(x,y),\quad x,y\in [0,1]^2.$$
 The image $u_1$ we observed is at the end state, $u(1, x, y) = u_1(x,y)$. We can assume that $u$ is periodic on the unit square. 
 
 ## Tools
@@ -55,9 +51,7 @@ you can get the following tools:
 * B - Score 5000 or lower: Returns the end state of the solution to our PDE, with given choices of ``u0``, ``a`` and $\nu$. Takes also as input the number of time steps ``N``, which if set too low might make the solution unreliable or even unstable.
 * C - Score 150 or lower: this fast solver lets you obtain the end state $u_1$ of the PDE without diffusion ($\nu=0$), but doesn't let you change the velocity field ``a``. It takes as input ``u0``.
 * D - Score 100 or lower: This incredible function returns the function space gradient of the mean square error between the smudged message $u_1$, and the final state $\tilde u_1(\tilde u_0)$ that corresponds to an approximation $\tilde u_0$ of the original message. In other words, this function returns the gradient $\nabla J(\tilde u_0)$ if we $J$ is defined as  
-$$
-J(\tilde u_0) = \int_0^1\int_0^1 (u_1-\tilde u_1(\tilde u_0))^2\mathrm{d}x\mathrm{d}y.
-$$
+$$J(\tilde u_0) = \int_0^1\int_0^1 (u_1-\tilde u_1(\tilde u_0))^2\mathrm{d}x\mathrm{d}y.$$
 #### You can keep trying multiple times, but please report the first guess to us. 
 
 ## Second Task
