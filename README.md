@@ -1,4 +1,5 @@
 ##  sfg-retreat-23. Ground rules:
+* ``git clone ``
 * Be nice :) 
 * Don't look in the ``secret`` folder unless you're given access to a certain function or package.
 * Install  the packages ``matplotlib, numpy, typing, datetime``.
