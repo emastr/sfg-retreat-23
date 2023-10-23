@@ -4,11 +4,11 @@
 * Install  the packages ``matplotlib, numpy, typing, datetime``.
 
 ## Teams
-1) Anna
-2) David
-3) Anna-Karin
-4) Jennifer
-5) Xiaoming
+1) 
+2) 
+3) 
+4) 
+5) 
 
 # Intro: The Message. 
 
@@ -30,7 +30,7 @@ After talking to our colleagues at the physics department, you find out that the
 In fact, if we consider the whiteboard to be a unit square $[0,1]^2$ and consider the concentration of ink $u(t, x,y)$ at time $t$
 since the perpetrator started smudging, one can model the smudging process as a PDE:
 $$\partial_t u(t,\pmb x) - a(\pmb x)\cdot \nabla u(t,\pmb x) = \nu \Delta u(t,\pmb x), \quad \pmb x \in [0,1]^2 \quad \text{and} \quad t\in [0,1],$$
-where $a(x,y)=(a_x(x,y), a_y(x,y))$ is the displacement vector field, and $\nu = 0.0005$ the diffusivity. 
+where $a(x,y)=(a_x(x,y), a_y(x,y))$ is the displacement vector field, and $\nu = 0.00004$ the diffusivity. 
 The initial condition is given by the original message $u_0(x,y)$, and is precisely the quantity that we wish to estimate:
 $$u(0, x, y) = u_0(x,y),\quad x,y\in [0,1]^2.$$
 The image $u_1$ we observed is at the end state, $u(1, x, y) = u_1(x,y)$. We can assume that $u$ is periodic on the unit square. 

@@ -78,13 +78,11 @@ def state_to_grid(state):
 
 def load_end_state(K=129):
     directory_path = os.path.dirname(__file__)
-    file_path = os.path.join(directory_path, 'end.jpg')
+    file_path = os.path.join(directory_path, 'end.npy')
     
     # Load image
-    img = np.sum(im.imread(file_path), axis=2).astype(float)/255
-    img = img[:-1, :-1]
-
-    basis = to_basis(img[::-1, :].T, K)
+    img = np.load(file_path)
+    basis = to_basis(img, K)
     return basis
 
 def load_init_state(K=129):    
@@ -93,7 +91,7 @@ def load_init_state(K=129):
 
     # Load image
     img = np.sum(im.imread(file_path), axis=2).astype(float)/255
-    img = img[:-1, :-1]
+    img = img[:, :]
 
     coef = BasisProduct._interpolate(img[::-1, :].T, FourBasis, FourBasis)
 
