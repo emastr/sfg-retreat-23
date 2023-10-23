@@ -4,7 +4,17 @@ import matplotlib.pyplot as plt
 from typing import List, Callable, Tuple
 
 MAT = np.ndarray
-   
+
+def bar_callback(N, n_bar):
+    def callback(u, t, n):
+        # Print progress bar
+        if n % n_bar == 0:
+            print('\rRunning Fourier based solve: [', end='')
+            print('#' * int(n / (N / 20)), end='')
+            print(' ' * (20 - int(n / (N / 20))), end='')
+            print(f'] ({n}/{N} steps, {int(100*n/N)}%)', end='')
+        pass
+    return callback
 
 def discretize(f: Callable[[MAT, MAT], MAT], n: int) -> MAT:
     """Evaluate the function f. f is a function of two variables,
